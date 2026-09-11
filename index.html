@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VORTEX Games</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070707;color:#fff;font-family:Arial,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:#090909ed;border-bottom:1px solid #292929;backdrop-filter:blur(10px)}
+.nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px}.brand img{width:48px;height:48px;object-fit:cover;border-radius:10px}
+.links{display:flex;gap:20px}.links a{color:#ddd}.links a:hover{color:#e3262e}.langs button{background:#151515;color:#ddd;border:1px solid #333;padding:7px 9px;border-radius:8px;cursor:pointer}.langs .on{background:#d71920;color:#fff}
+.hero{text-align:center;padding:90px 20px 80px;background:radial-gradient(circle at center,#38080c,#100305 38%,#070707 72%)}.hero img{width:115px;height:115px;border-radius:22px;object-fit:cover;box-shadow:0 0 50px #e3262e55}.tag{color:#e3262e;font-weight:800;letter-spacing:3px;margin-top:18px}h1{font-size:clamp(42px,8vw,78px);margin:7px 0}.hero p{color:#bbb;font-size:19px;max-width:650px;margin:10px auto 28px}.btn{border:0;border-radius:10px;background:#d71920;color:#fff;padding:12px 20px;font-weight:800;cursor:pointer}
+section{max-width:1180px;margin:auto;padding:60px 20px}h2{font-size:34px;margin:0 0 8px}.muted{color:#999}.cats{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.cat{padding:10px 16px;border-radius:20px;border:1px solid #333;background:#111;color:#ddd;cursor:pointer}.cat.active{background:#d71920;border-color:#d71920;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:#111;border:1px solid #282828;border-radius:16px;overflow:hidden}.cover{height:230px;display:grid;place-items:center;background:linear-gradient(135deg,#191919,#080808);font-size:42px}.body{padding:16px}.platform{color:#e3262e;font-size:13px;font-weight:700}.price{font-size:21px;font-weight:900;margin:10px 0 14px}
+.order{display:none;background:#101010;border:1px solid #292929;border-radius:18px;padding:25px;margin-top:35px}.order input,.order select{width:100%;padding:12px;margin:6px 0;background:#181818;color:#fff;border:1px solid #333;border-radius:8px}
+footer{text-align:center;border-top:1px solid #222;padding:30px;color:#777}
+@media(max-width:700px){.links{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav"><div class="brand"><img src="logo.jpeg">VORTEX GAMES</div>
+<div class="links"><a href="#home" data-ar="الرئيسية" data-fr="Accueil" data-en="Home">الرئيسية</a><a href="#games" data-ar="الألعاب" data-fr="Jeux" data-en="Games">الألعاب</a><a href="#order" data-ar="الطلب" data-fr="Commande" data-en="Order">الطلب</a></div>
+<div class="langs"><button class="on" onclick="lang('ar')">AR</button><button onclick="lang('fr')">FR</button><button onclick="lang('en')">EN</button></div></div></nav>
+
+<header id="home" class="hero"><img src="logo.jpeg"><div class="tag">VORTEX</div><h1 data-ar="متجر الألعاب" data-fr="Boutique Gaming" data-en="Gaming Store">متجر الألعاب</h1>
+<p data-ar="اكتشف ألعابك المفضلة للـPC وPlayStation وXbox وأكثر." data-fr="Découvrez vos jeux préférés sur PC, PlayStation, Xbox et plus." data-en="Discover your favorite games for PC, PlayStation, Xbox and more.">اكتشف ألعابك المفضلة للـPC وPlayStation وXbox وأكثر.</p>
+<a class="btn" href="#games" data-ar="تصفح الألعاب" data-fr="Voir les jeux" data-en="Browse games">تصفح الألعاب</a></header>
+
+<section id="games"><h2 data-ar="الألعاب" data-fr="Jeux" data-en="Games">الألعاب</h2><div class="cats">
+<button class="cat active" onclick="filter('all')" data-ar="الكل" data-fr="Tout" data-en="All">الكل</button><button class="cat" onclick="filter('pc')">PC</button><button class="cat" onclick="filter('ps')">PlayStation</button><button class="cat" onclick="filter('xbox')">Xbox</button><button class="cat" onclick="filter('mobile')">Mobile</button></div>
+<div class="grid">
+<div class="card" data-type="pc"><div class="cover">🎮</div><div class="body"><span class="platform">PC</span><h3>Game Vortex #01</h3><div class="price">49 DT</div><button class="btn" onclick="openOrder('Game Vortex #01')">طلب</button></div></div>
+<div class="card" data-type="ps"><div class="cover">🕹️</div><div class="body"><span class="platform">PlayStation</span><h3>Game Vortex #02</h3><div class="price">69 DT</div><button class="btn" onclick="openOrder('Game Vortex #02')">طلب</button></div></div>
+<div class="card" data-type="xbox"><div class="cover">🎮</div><div class="body"><span class="platform">Xbox</span><h3>Game Vortex #03</h3><div class="price">59 DT</div><button class="btn" onclick="openOrder('Game Vortex #03')">طلب</button></div></div>
+<div class="card" data-type="mobile"><div class="cover">📱</div><div class="body"><span class="platform">Mobile</span><h3>Game Vortex #04</h3><div class="price">29 DT</div><button class="btn" onclick="openOrder('Game Vortex #04')">طلب</button></div></div>
+</div>
+<div id="order" class="order"><h2 data-ar="إتمام الطلب" data-fr="Finaliser la commande" data-en="Complete order">إتمام الطلب</h2>
+<form onsubmit="sendOrder(event)"><input id="game" readonly><input id="name" required placeholder="الاسم واللقب"><input id="phone" required placeholder="رقم الهاتف"><input id="address" required placeholder="العنوان"><button class="btn" type="submit" data-ar="إرسال الطلب عبر WhatsApp" data-fr="Envoyer via WhatsApp" data-en="Send via WhatsApp">إرسال الطلب عبر WhatsApp</button></form></div>
+</section>
+<footer>© 2026 VORTEX GAMES</footer>
+<script>
+function filter(t){document.querySelectorAll('.card').forEach(c=>c.style.display=t==='all'||c.dataset.type===t?'block':'none');document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));event.target.classList.add('active')}
+function openOrder(g){document.getElementById('order').style.display='block';document.getElementById('game').value=g;document.getElementById('order').scrollIntoView({behavior:'smooth'})}
+function sendOrder(e){e.preventDefault();let m=encodeURIComponent('طلب جديد VORTEX GAMES%0Aاللعبة: '+game.value+'%0Aالاسم: '+name.value+'%0Aالهاتف: '+phone.value+'%0Aالعنوان: '+address.value);window.open('https://wa.me/21600000000?text='+m,'_blank')}
+function lang(l){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.querySelectorAll('[data-'+l+']').forEach(e=>e.textContent=e.getAttribute('data-'+l));document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l))}
+</script></body></html>
